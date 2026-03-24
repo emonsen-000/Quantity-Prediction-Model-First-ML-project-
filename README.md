@@ -60,27 +60,26 @@ Model performance was evaluated using:
 Example result:
 
 - In Linear Regression Model
-MAE: ~1.02
-MSE: ~1.47
-R² : ~0.26
+. MAE: ~1.02
+. MSE: ~1.47
+. R² : ~0.26
 
 This means the model explains around 26% of the variation in purchase quantity.
 
 - In KNN Regressor Model
-MAE 0.44
-MSE 0.37
-r2 0.816
+. MAE: 0.44
+. MSE: 0.37
+. r2: 0.816
 This means the model explains around 81.6%% of the variation in purchase quantity.
 
 # Visualization
 
 * In Linear Regression Model
-- A scatter plot is used to compare Actual vs Predicted Quantity.
+i) A scatter plot is used to compare Actual vs Predicted Quantity.
 
 * In KNN Regressor Model
-- Residual Plot
-- K2 vs Error Plot
-
+i) Residual Plot
+ii) K2 vs Error Plot
 
 # Project Purpose
 
