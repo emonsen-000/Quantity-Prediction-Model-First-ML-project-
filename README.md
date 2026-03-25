@@ -1,29 +1,19 @@
-# Overview
+## 📊 Quantity Prediction using Machine Learning
+# 📌 Overview
+This project is part of my early machine learning journey.
+After completing a sales analysis project on an Amazon-style dataset, I extended it by building machine learning models to predict product purchase quantity based on order features.
 
-This project is my first machine learning project as I begin learning machine learning.
+#The goal is to practice the complete ML workflow:
 
-Previously, I performed a sales analysis project on an Amazon-style sales dataset.
-In this project, I extend that analysis by building a machine learning model to predict product purchase quantity based on several order features.
+- Data preparation
+- Feature engineering
+- Encoding categorical variables
+- Model training
+- Model evaluation
+- Visualization
+## 📁 Features Used
 
-# The goal of this project is to practice the basic machine learning workflow, including:
-
-- data preparation
-
-- feature engineering
-
-- encoding categorical variables
-
-- training a regression model
-
-- evaluating model performance
-
-- visualizing predictions
-
-This project is part of my early ML learning journey, and I plan to improve it later with more advanced models.
-
-# Dataset Features Used
-
-The model predicts Quantity using the following features:
+The target variable is Quantity, predicted using:
 
 - UnitPrice
 - Discount
@@ -34,80 +24,59 @@ The model predicts Quantity using the following features:
 - PaymentMethod
 - Country
 - Month (extracted from OrderDate)
-- Categorical variables were converted into numerical form using Label Encoding. (In Linear Model)
-- Categorical variables were converted into a more structural form using One Hot Encoding. (In KNN Regressor Model)
 
-# Machine Learning Model
+## 🔄 Data Preprocessing
+Train/Test Split: 80% / 20%
+Feature Scaling applied (for KNN)
+# Encoding Strategy:
+Label Encoding → used in Linear Regression
+One-Hot Encoding → used in KNN Regressor
 
-Model used: 
-- Linear Regression.
-- KNN Regressor
+## ⚠️ Important Learning:
+Label Encoding negatively impacted KNN performance because it introduces artificial ordinal relationships.
+One-Hot Encoding significantly improved results.
 
+# 🤖 Models Used
+- Linear Regression (Baseline Model)
+- KNN Regressor (Distance-based model)
+- 
+## 📊 Model Performance
+Model	            |   MAE |	MSE	  |R² Score
+Linear Regression | ~1.02	| ~1.47 | ~0.26
+KNN Regressor	    |  0.44	| 0.37	| 0.816
 
-* The dataset was split using:
-Train/Test Split (80% training / 20% testing)
+## 📉 Visualization Insights
+# Scatter Plot Behavior (Important Observation)
+The Actual vs Predicted plots appear as lines of dots instead of a continuous spread.
 
-# Model Evaluation
+This happens because:
+Quantity values are discrete integers (e.g., 1, 2, 3)
+KNN predicts average values (e.g., 2.66, 3.33)
 
-Model performance was evaluated using:
+As a result:
+Points cluster around fixed levels
+Creating horizontal “lines” instead of a smooth distribution
 
-. Mean Absolute Error (MAE)
+👉 This is expected behavior and not a model issue.
 
-. Mean Squared Error (MSE)
+## 📈 Visualizations Included
+- Actual vs Predicted Scatter Plot (Linear Regression)
+- Residual Plot (KNN)
+- K vs Error Plot (KNN tuning)
 
-. R² Score
+## 🎯 Project Purpose
+This project demonstrates my understanding of:
 
-Example result:
+- Machine learning workflow
+- Regression techniques
+- Feature encoding impact
+- Model evaluation metrics
+- Data visualization
+## 🚀 Future Improvements
+- Random Forest
+- Gradient Boosting
+- Hyperparameter tuning
+- Feature importance analysis
+## 📌 Conclusion
 
-- In Linear Regression Model
-. MAE: ~1.02
-. MSE: ~1.47
-. R² : ~0.26
-
-This means the model explains around 26% of the variation in purchase quantity.
-
-- In KNN Regressor Model
-. MAE: 0.44
-. MSE: 0.37
-. r2: 0.816
-This means the model explains around 81.6%% of the variation in purchase quantity.
-
-# Visualization
-
-* In Linear Regression Model
-i) A scatter plot is used to compare Actual vs Predicted Quantity.
-
-* In KNN Regressor Model
-i) Residual Plot
-ii) K2 vs Error Plot
-
-# Project Purpose
-
-This project is intended as a learning exercise while studying machine learning.
-
-It demonstrates my understanding of:
-
-. basic ML workflow
-
-. regression models
-
-. feature preparation
-
-. model evaluation
-
-. result visualization
-
-. Future Improvements
-
-As I continue learning machine learning, I plan to improve this project by trying more advanced models such as:
-
-Random Forest
-
-Gradient Boosting
-
-
-These models may better capture complex relationships in the data.
-
-# Author
-
-This project is part of my learning journey into data science and machine learning
+This project highlights how proper feature encoding and preprocessing can significantly impact model performance, especially for distance-based algorithms like KNN.
